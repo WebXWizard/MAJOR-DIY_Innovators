@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Templates = () => {
   const [product, setProduct] = useState([]);
+  const [filterProduct, setFilterProduct] = useState([]);
 
   const fetchProduct = async () => {
     const res = await fetch("http://localhost:5000/tutorials/getall");
@@ -18,6 +19,7 @@ const Templates = () => {
       // const data = await res.json();
       console.log(data);
       setProduct(data);
+      setFilterProduct(data);
     }
   };
   useEffect(() => {
@@ -62,15 +64,24 @@ const Templates = () => {
       </div>
     ));
   };
-    // For Searching(Filter)
-    const applysearch = (e) => {
-      const value = e.target.value;
-      setProduct(
-        product.filter((product) => {
-          return product.name.toLowerCase().includes(value.toLowerCase());
-        })
-      );
-    };
+  // For Searching(Filter)
+  const applysearch = (e) => {
+    const value = e.target.value;
+    setProduct(
+      product.filter((product) => {
+        return product.name.toLowerCase().includes(value.toLowerCase());
+      })
+    );
+  };
+
+  // For Filtering of Products By Category
+  const filterBYCategory = (product) => {
+    console.log(product);
+    const filteredProduct = filterProduct.filter((col) =>
+      col.category.toLowerCase().includes(product.toLowerCase())
+    );
+    setProduct(filteredProduct);
+  };
 
   return (
     <div className="font-[sans-serif] ">
@@ -100,7 +111,7 @@ const Templates = () => {
                   What's So Fly About DIY
                 </h1>
                 <p className="mt-3 text-gray-600 text-xl">
-                  Stay in the know with insights from industry experts.
+                  Stay in the know with DIY Kits for Young Creators and Adults.
                 </p>
                 <div className="mt-4 sm:mt-8 mx-auto max-w-xl relative">
                   {/* Form */}
@@ -198,10 +209,11 @@ const Templates = () => {
                   </div>
                   {/* End SVG Element */}
                 </div>
+
                 <div className="mt-8 sm:mt-10">
-                  <a
+                  <button
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    onClick={(e) => filterBYCategory("MineCraft")}
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -218,11 +230,11 @@ const Templates = () => {
                       <rect width={20} height={14} x={2} y={7} rx={2} ry={2} />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                    Business Laptops
-                  </a>
-                  <a
+                    MineCraft
+                  </button>
+                  <button
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    onClick={(e) => filterBYCategory("Drawing")}
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -239,11 +251,11 @@ const Templates = () => {
                       <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
                       <circle cx={12} cy={12} r={3} />
                     </svg>
-                    Replacement
-                  </a>
-                  <a
+                    Animations
+                  </button>
+                  <button
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    onClick={(e) => filterBYCategory("Animations")}
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -259,11 +271,11 @@ const Templates = () => {
                     >
                       <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                     </svg>
-                    Lightweight
-                  </a>
-                  <a
+                    Drawing
+                  </button>
+                  <button
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    onClick={(e) => filterBYCategory("Fashion")}
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -281,11 +293,13 @@ const Templates = () => {
                       <path d="M9 18h6" />
                       <path d="M10 22h4" />
                     </svg>
-                    Performance
-                  </a>
-                  <a
+                    Fashion
+                  </button>
+                  {/*                   
+                  <button
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    onClick={(e) => filterBYCategory('Business Laptops')}
+                    
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -308,7 +322,7 @@ const Templates = () => {
                       <path d="M10 18h4" />
                     </svg>
                     EveryDay Computing
-                  </a>
+                  </button> */}
                   {/* <a
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     href="#"
@@ -337,7 +351,6 @@ const Templates = () => {
         </>
       </header>
 
-      
       {/* <p className="text-2xl text-semibold  ml-10 px-8 py-2"></p> */}
       <div className="container p-4">
         <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 lg:ml-8">

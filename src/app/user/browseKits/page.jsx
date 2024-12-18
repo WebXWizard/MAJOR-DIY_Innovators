@@ -66,8 +66,8 @@ const Templates = () => {
     ));
   };
 
-   // For Searching(Filter)
-   const applysearch = (e) => {
+  // For Searching(Filter)
+  const applysearch = (e) => {
     const value = e.target.value;
     setProduct(
       product.filter((product) => {
@@ -80,14 +80,14 @@ const Templates = () => {
     <div className="font-[sans-serif]">
       <header className="bg-body-tertiary py-5">
         {/* <div className="container py-5">
-          <p className="text-center mb-5 text-3xl">All Products</p>
+  <p className="text-center mb-5 text-3xl">All Products</p>
 
-          <input
-            type="text"
-            placeholder="Search Items"
-            className="form-control w-75 mx-auto rounded-lg border border-black text-xl px-4 py-1 ml-8"
-          />
-        </div> */}
+  <input
+    type="text"
+    placeholder="Search Items"
+    className="form-control w-75 mx-auto rounded-lg border border-black text-xl px-4 py-1 ml-8"
+  />
+</div> */}
         <>
           {/* Hero */}
           <div className="relative overflow-hidden font-[sans-serif]">
@@ -307,25 +307,25 @@ const Templates = () => {
                     EveryDay Computing
                   </a>
                   {/* <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
-                  >
-                    <svg
-                      className="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-                    </svg>
-                    MacBook
-                  </a> */}
+            className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+            href="#"
+          >
+            <svg
+              className="shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+            </svg>
+            MacBook
+          </a> */}
                 </div>
               </div>
             </div>
@@ -333,14 +333,13 @@ const Templates = () => {
           {/* End Hero */}
         </>
       </header>
-
+      ;
       <div className="container font-[sans-serif] ">
         <div className="lg:ml-16 md:ml-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           {" "}
           {displayProduct()}{" "}
         </div>
       </div>
-
       <div className="hidden md:block max-w-3xl text-center mx-auto font-[sans-serif] mt-12 ">
         <h1 className="block font-extrabold text-gray-800 text-xl md:text-2xl lg:text-4xl capitalize">
           <span className="bg-clip-text bg-violet-500 text-transparent font-[sans-serif]">
@@ -354,7 +353,6 @@ const Templates = () => {
           />
         </div>
       </div>
-
       <div
         id="component-tab-1"
         className="preview-section"
