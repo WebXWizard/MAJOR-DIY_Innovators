@@ -24,7 +24,7 @@ const AddKits = () => {
           console.log(response.status);
           resetForm();
           toast.success("Product Added Successfully");
-          router.push("/browseKits");
+          router.push("/user/browseKits");
         })
         .catch((err) => {
           console.log(err);

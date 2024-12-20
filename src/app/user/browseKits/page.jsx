@@ -335,7 +335,7 @@ const Templates = () => {
       </header>
       ;
       <div className="container font-[sans-serif] ">
-        <div className="lg:ml-16 md:ml-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+        <div className="lg:ml-16 md:ml-12 grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           {" "}
           {displayProduct()}{" "}
         </div>

@@ -111,7 +111,7 @@ const Templates = () => {
                   What's So Fly About DIY
                 </h1>
                 <p className="mt-3 text-gray-600 text-xl">
-                  Stay in the know with DIY Kits for Young Creators and Adults.
+                  Stay in the know with DIY Tutorials for Young Creators and Adults.
                 </p>
                 <div className="mt-4 sm:mt-8 mx-auto max-w-xl relative">
                   {/* Form */}
@@ -353,7 +353,7 @@ const Templates = () => {
 
       {/* <p className="text-2xl text-semibold  ml-10 px-8 py-2"></p> */}
       <div className="container p-4">
-        <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 lg:ml-8">
+        <div className="mx-auto justify-center grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 lg:ml-8">
           {displayProduct()}
         </div>
       </div>
