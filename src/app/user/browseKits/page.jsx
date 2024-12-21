@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Templates = () => {
   const [product, setProduct] = useState([]);
+  const [filterProduct, setFilterProduct] = useState([]);
 
   const fetchProduct = async () => {
     const res = await fetch("http://localhost:5000/product/getall");
@@ -18,6 +19,7 @@ const Templates = () => {
       // const data = await res.json();
       console.log(data);
       setProduct(data);
+      setFilterProduct(data);
     }
   };
   useEffect(() => {
@@ -76,20 +78,19 @@ const Templates = () => {
     );
   };
 
+  // For Filtering of Products By Category
+  const filterBYCategory = (product) => {
+    console.log(product);
+    const filteredProduct = filterProduct.filter((col) =>
+      col.category.toLowerCase().includes(product.toLowerCase())
+    );
+    setProduct(filteredProduct);
+  };
+
   return (
     <div className="font-[sans-serif]">
       <header className="bg-body-tertiary py-5">
-        {/* <div className="container py-5">
-  <p className="text-center mb-5 text-3xl">All Products</p>
-
-  <input
-    type="text"
-    placeholder="Search Items"
-    className="form-control w-75 mx-auto rounded-lg border border-black text-xl px-4 py-1 ml-8"
-  />
-</div> */}
         <>
-          {/* Hero */}
           <div className="relative overflow-hidden font-[sans-serif]">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 ">
               <div className="text-center">
@@ -196,141 +197,138 @@ const Templates = () => {
                   {/* End SVG Element */}
                 </div>
                 <div className="mt-8 sm:mt-10">
-                  <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Magic House Kit")}
                   >
                     <svg
-                      className="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                      stroke="#101010"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <rect width={20} height={14} x={2} y={7} rx={2} ry={2} />
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M20.4 14.5L16 10 4 20" />
                     </svg>
-                    Business Laptops
-                  </a>
-                  <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    Magic House Kit
+                  </button>
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Hampers")}
                   >
                     <svg
-                      className="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                      stroke="#101010"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                      <circle cx={12} cy={12} r={3} />
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
                     </svg>
-                    Replacement
-                  </a>
-                  <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    Hampers
+                  </button>
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Toys DIY")}
                   >
                     <svg
-                      className="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                      stroke="#101010"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
                     </svg>
-                    Lightweight
-                  </a>
-                  <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    Toys DIY
+                  </button>
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Greetings")}
                   >
                     <svg
-                      className="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                      stroke="#101010"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-                      <path d="M9 18h6" />
-                      <path d="M10 22h4" />
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
-                    Performance
-                  </a>
-                  <a
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    Greetings
+                  </button>
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Cards")}
                   >
                     <svg
-                      className="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                      stroke="#101010"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-                      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-                      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-                      <path d="M10 6h4" />
-                      <path d="M10 10h4" />
-                      <path d="M10 14h4" />
-                      <path d="M10 18h4" />
+                      <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                      <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
                     </svg>
-                    EveryDay Computing
-                  </a>
-                  {/* <a
-            className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-            href="#"
-          >
-            <svg
-              className="shrink-0 size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-            </svg>
-            MacBook
-          </a> */}
+                    Cards
+                  </button>
+                  <button
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Craft")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#101010"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                    Craft
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          {/* End Hero */}
         </>
       </header>
       ;

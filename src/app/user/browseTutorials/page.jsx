@@ -111,7 +111,8 @@ const Templates = () => {
                   What's So Fly About DIY
                 </h1>
                 <p className="mt-3 text-gray-600 text-xl">
-                  Stay in the know with DIY Tutorials for Young Creators and Adults.
+                  Stay in the know with DIY Tutorials for Young Creators and
+                  Adults.
                 </p>
                 <div className="mt-4 sm:mt-8 mx-auto max-w-xl relative">
                   {/* Form */}
@@ -212,7 +213,7 @@ const Templates = () => {
 
                 <div className="mt-8 sm:mt-10">
                   <button
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     onClick={(e) => filterBYCategory("MineCraft")}
                   >
                     <svg
@@ -233,7 +234,7 @@ const Templates = () => {
                     MineCraft
                   </button>
                   <button
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     onClick={(e) => filterBYCategory("Drawing")}
                   >
                     <svg
@@ -254,7 +255,7 @@ const Templates = () => {
                     Animations
                   </button>
                   <button
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     onClick={(e) => filterBYCategory("Animations")}
                   >
                     <svg
@@ -274,7 +275,7 @@ const Templates = () => {
                     Drawing
                   </button>
                   <button
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     onClick={(e) => filterBYCategory("Fashion")}
                   >
                     <svg
@@ -295,11 +296,10 @@ const Templates = () => {
                     </svg>
                     Fashion
                   </button>
-                  {/*                   
+
                   <button
-                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                    onClick={(e) => filterBYCategory('Business Laptops')}
-                    
+                    className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-lg font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                    onClick={(e) => filterBYCategory("Cook")}
                   >
                     <svg
                       className="shrink-0 size-4"
@@ -321,8 +321,8 @@ const Templates = () => {
                       <path d="M10 14h4" />
                       <path d="M10 18h4" />
                     </svg>
-                    EveryDay Computing
-                  </button> */}
+                    Cook
+                  </button>
                   {/* <a
                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                     href="#"

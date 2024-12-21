@@ -12,8 +12,7 @@ const AddKits = () => {
       name: "",
       price: "",
       url: "",
-      //   link: " ",
-      //   package_name: "",
+      category: " ",
       description: "",
     },
     onSubmit: (values, { resetForm }) => {
@@ -190,24 +189,24 @@ const AddKits = () => {
                     />
                   </div>
 
-                  {/* <div className="w-full mt-4">
+                   <div className="w-full mt-4">
                     <label className="block mb-2 text-xl "></label>
-                    {addLibraryForm.errors.package_name &&
-                    addLibraryForm.touched.package_name ? (
+                    {addLibraryForm.errors.category &&
+                    addLibraryForm.touched.category ? (
                       <div className="text-red-500 text-sm">
-                        {addLibraryForm.errors.package_name}
+                        {addLibraryForm.errors.category}
                       </div>
                     ) : null}
                     <input
                       className="block w-full px-4 py-2 mt-2 text-white placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                       type="text"
-                      placeholder="Package_Name"
+                      placeholder="Category"
                       aria-label="Email Address"
-                      id="package_name"
+                      id="category"
                       onChange={addLibraryForm.handleChange}
-                      value={addLibraryForm.values.package_name}
+                      value={addLibraryForm.values.category}
                     />
-                  </div> */}
+                  </div> 
 
                   {/* <div className="w-full mt-4">
                     <label className="block mb-2 text-xl "></label>
