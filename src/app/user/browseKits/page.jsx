@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-// import { useParams, Link } from "react-router-dom";
-// import classes from './template.module.css'
+import useProductContext from "@/context/ProductContext";
 
-const Templates = () => {
+const Kits = () => {
   const [product, setProduct] = useState([]);
   const [filterProduct, setFilterProduct] = useState([]);
+  const { addItemToCart, isInCart } = useProductContext();
 
   const fetchProduct = async () => {
     const res = await fetch("http://localhost:5000/product/getall");
@@ -29,7 +29,7 @@ const Templates = () => {
   const displayProduct = () => {
     return product.map((obj) => (
       <div className=" ">
-        <Link href={"/user/viewKits/" + obj._id} className="">
+        <div href={"/user/viewKits/" + obj._id} className="">
           <div className="font-[sans-serif]">
             <div className="container ">
               <div className="">
@@ -42,9 +42,12 @@ const Templates = () => {
                     />
                     <div className="absolute inset-0 bg-black opacity-40" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <button className="bg-white text-gray-900 py-2 px-4 rounded-xl font-bold hover:bg-gray-300 hidden md:block">
+                      <a
+                        href={"/user/viewKits/" + obj._id}
+                        className="bg-white text-gray-900 py-2 px-4 rounded-xl font-bold hover:bg-gray-300 hidden md:block"
+                      >
                         View Product
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <h3 className="sm:text-md md:text-lg lg:text-xl font-bold text-gray-900 mt-4">
@@ -55,15 +58,19 @@ const Templates = () => {
                     <span className="text-gray-900 font-bold sm:text-md md:text-lg lg:text-xl ">
                       ₹ {obj.price}
                     </span>
-                    <button className="bg-gray-900 text-white py-2 px-4 rounded-xl font-bold hover:bg-gray-800">
-                      Add to Cart
-                    </button>
+                    <a href="/user/cart"
+                      disabled={isInCart(obj)}
+                      onClick={(e) => addItemToCart(obj)}
+                      className="bg-gray-900 text-white py-2 px-4 rounded-xl font-bold hover:bg-gray-800"
+                    >
+                      {isInCart(obj) ? "Already Added" : "Add to Cart"}
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </Link>
+        </div>
       </div>
     ));
   };
@@ -370,4 +377,4 @@ const Templates = () => {
   );
 };
 
-export default Templates;
+export default Kits;

@@ -120,7 +120,7 @@ const ViewKits = () => {
                       </div>
                     </div>
                     <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8 font-[sans-serif]">
-                      <a
+                      {/* <a
                         href="#"
                         title=""
                         className="flex items-center justify-center py-2.5 px-5 text-md font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -144,8 +144,8 @@ const ViewKits = () => {
                           />
                         </svg>
                         Add to Wishlist
-                      </a>
-                      <a
+                      </a> */}
+                      {/* <a
                         href="#"
                         title=""
                         className=" mt-4 sm:mt-0 bg-violet-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 dark:bg-indigo-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center justify-center text-white"
@@ -169,7 +169,7 @@ const ViewKits = () => {
                           />
                         </svg>
                         Add to cart
-                      </a>
+                      </a> */}
                     </div>
                     <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
                     <h3 className="text-xl font-semibold mb-2">

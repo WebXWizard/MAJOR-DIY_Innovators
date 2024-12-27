@@ -30,12 +30,6 @@ const UserNavbar = () => {
               Home
             </Link>
             <Link
-              href="/admin/adminDashboard"
-              className="inline-flex items-center gap-1 text-md font-semibold text-gray-600 hover:border-b-2  border-blue-400"
-            >
-              Admin
-            </Link>
-            <Link
               href="/user/browseTutorials"
               className="inline-flex items-center gap-1 text-md font-semibold text-gray-600 hover:border-b-2  border-blue-400"
             >
@@ -60,18 +54,48 @@ const UserNavbar = () => {
               DIY Kits
             </Link>
           </nav>
+          <button
+            id="myCartDropdownButton1"
+            data-dropdown-toggle="myCartDropdown1"
+            type="button"
+            className="flex rounded-lg px-4 py- text-center text-xl font-semibold text-gray-600 outline-none ring-indigo-300"
+          >
+            {/* <span className="sr-only">Cart</span> */}
+            <svg
+              className="w-8 h-10 lg:me-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+              />
+            </svg>
+            <a href="/user/cart" className="inline-flex items-center gap-1 text-xl font-semibold text-gray-600 hover:border-b-2  border-blue-400">
+              My Cart
+            </a>
+          </button>
 
           {loggedIn ? (
-            <div className="ml-5 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
+            <div className="hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
               <button
                 className="inline-block rounded-xl bg-indigo-600 px-3 py-2 text-center text-xl font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-800 focus-visible:ring active:bg-indigo-700"
                 onClick={logout}
               >
+                
                 Logout
+                
               </button>
             </div>
           ) : (
-            <div className="ml-5 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start ">
+            <div className=" hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start ">
               <a
                 href="/user/login"
                 className="inline-block rounded-lg px-4 py-3 text-center text-xl font-semibold text-gray-600 outline-none ring-indigo-300 "

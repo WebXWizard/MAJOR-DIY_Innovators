@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster, ToastBar } from "react-hot-toast";
 
 import { AppProvider } from "@/context/appContext";
+import { ProductProvider } from "@/context/ProductContext";
+
 import UserNavbar from "./navbar";
 
 // const geistSans = localFont({
@@ -26,26 +28,28 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={` antialiased`}>
-        <AppProvider>
-          <UserNavbar />
+        <ProductProvider>
+          <AppProvider>
+            <UserNavbar />
 
-          <Toaster>
-            {(t) => (
-              <ToastBar
-                toast={t}
-                style={{
-                  ...t.style,
-                  animation: t.visible
-                    ? "custom-enter 1s ease"
-                    : "custom-exit 1s ease",
-                }}
-              />
-            )}
-          </Toaster>
+            <Toaster>
+              {(t) => (
+                <ToastBar
+                  toast={t}
+                  style={{
+                    ...t.style,
+                    animation: t.visible
+                      ? "custom-enter 1s ease"
+                      : "custom-exit 1s ease",
+                  }}
+                />
+              )}
+            </Toaster>
 
-          {children}
-          {/* <Footer /> */}
-        </AppProvider>
+            {children}
+            {/* <Footer /> */}
+          </AppProvider>
+        </ProductProvider>
       </body>
     </html>
   );

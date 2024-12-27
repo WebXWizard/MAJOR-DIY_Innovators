@@ -132,7 +132,7 @@ export default function Home() {
           </section>
         </div>
       </div>
-      
+
       {/* About Section */}
       <div className="container relative flex flex-col justify-center h-full max-w-4xl px-10 mx-auto xl:px-0 mt-2">
         <div className=" max-w-3xl text-center mx-auto font-[sans-serif] mb-8">
@@ -367,6 +367,7 @@ export default function Home() {
           <a href="https://tw-elements.com/">DIY INNOVATORS</a>
         </div>
       </footer>
+
     </div>
   );
 }

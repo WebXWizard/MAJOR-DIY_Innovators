@@ -1,7 +1,6 @@
 "use client";
 // import localFont from "next/font/local";
 import Navbar from "./navbar";
-
 import { Toaster, ToastBar } from "react-hot-toast";
 
 // const geistSans = localFont({
