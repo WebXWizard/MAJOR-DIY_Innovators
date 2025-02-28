@@ -78,7 +78,7 @@ const UserNavbar = () => {
                 d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
               />
             </svg>
-            <a href="/user/cart" className="inline-flex items-center gap-1 text-xl font-semibold text-gray-600 hover:border-b-2  border-blue-400">
+            <a href="/user/cart" className="flex py-2 text-md font-semibold text-gray-600 hover:border-b-2 border-blue-400">
               My Cart
             </a>
           </button>

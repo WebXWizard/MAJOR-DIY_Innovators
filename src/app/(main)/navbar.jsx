@@ -79,12 +79,12 @@ const Navbar = () => {
                 d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
               />
             </svg>
-            <span
-              href="/user/signUp"
+            <a
+              href="/user/cart"
               className="flex py-2 text-md font-semibold text-gray-600 hover:border-b-2 border-blue-400"
             >
               My Cart
-            </span>
+            </a>
           </button>
 
           <div className=" hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start ">

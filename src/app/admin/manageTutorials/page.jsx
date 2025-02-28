@@ -31,7 +31,7 @@ const ManageUser = () => {
       })
       .catch((err) => {
         console.log(err);
-        toast.error("Failed to Delete User");
+        toast.error("Failed to Delete Tutorials");
       });
   };
 

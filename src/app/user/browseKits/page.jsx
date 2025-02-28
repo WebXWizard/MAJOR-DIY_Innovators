@@ -58,7 +58,7 @@ const Kits = () => {
                     <span className="text-gray-900 font-bold sm:text-md md:text-lg lg:text-xl ">
                       ₹ {obj.price}
                     </span>
-                    <a href="/user/cart"
+                    <a href=""
                       disabled={isInCart(obj)}
                       onClick={(e) => addItemToCart(obj)}
                       className="bg-gray-900 text-white py-2 px-4 rounded-xl font-bold hover:bg-gray-800"

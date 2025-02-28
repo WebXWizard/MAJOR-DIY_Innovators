@@ -92,7 +92,7 @@ const Cart = () => {
                 </button>
                 <space className="font-bold text-sm leading-[16px]">1</space>
                 <button
-                  onClick={(e) => addItemToCart(item)}
+                  // onClick={(e) => addItemToCart(item)}
                   type="button"
                   className="flex items-center justify-center w-5 h-5 bg-blue-600 outline-none rounded-full"
                 >
