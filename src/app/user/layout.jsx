@@ -1,6 +1,6 @@
 "use client";
 // import localFont from "next/font/local";
-import "./globals.css";
+// import "./globals.css";
 import { Toaster, ToastBar } from "react-hot-toast";
 
 import { AppProvider } from "@/context/appContext";

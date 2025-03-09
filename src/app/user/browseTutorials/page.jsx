@@ -28,7 +28,7 @@ const Templates = () => {
 
   const displayProduct = () => {
     return product.map((obj) => (
-      <div className=" ">
+      <div key={obj._id} className=" ">
         <Link href={"/user/viewTutorials/" + obj._id} className="">
           <div className="">
             <div className="mx-2 rounded-xl bg-gray-100" />
@@ -45,16 +45,14 @@ const Templates = () => {
                 </h5>
                 <p className="mb-8 text-gray-600">{}</p>
                 <div className="flex justify-between">
-                  <a
+                  <button
                     href="#"
                     className="group text-lg font-bold focus:text-indigo-600 hover:text-indigo-600"
                   >
                     <span>▷ </span>
                     <span className="underline text-xl">Watch Now</span>
-                  </a>
-                  <div className="max-w-full flex-none lg:px-4">
-                    {/* <h5 className="text-lg font-bold">Video 6</h5> */}
-                  </div>
+                  </button>
+                  <div className="max-w-full flex-none lg:px-4"></div>
                 </div>
               </div>
             </div>
@@ -64,6 +62,7 @@ const Templates = () => {
       </div>
     ));
   };
+  
   // For Searching(Filter)
   const applysearch = (e) => {
     const value = e.target.value;
