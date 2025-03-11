@@ -90,7 +90,7 @@ const Cart = () => {
                     />
                   </svg>
                 </button>
-                <space className="font-bold text-sm leading-[16px]">1</space>
+                <span className="font-bold text-sm leading-[16px]">1</span>
                 <button
                   // onClick={(e) => addItemToCart(item)}
                   type="button"

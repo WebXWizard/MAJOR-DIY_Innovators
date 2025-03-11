@@ -3,7 +3,18 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div>
-      <div className=" bg-black w-full min-h-screen  text-slate-300 relative py-4 font-[sans-serif]">
+      <div className="max-w-2xl mx-auto text-center font-[sans-serif]">
+        <h2 className="text-3xl font-bold leading-tight text-indigo-600 sm:text-4xl lg:text-5xl">
+          Welcome to Admin Panel
+        </h2>
+        <p className="max-w-2xl mx-auto mt-4 text-lg leading-relaxed text-gray-600">
+          This Dashboard allows you to manage users, courses, payments,
+          attendance, and website content. It provides a dashboard for key
+          stats, handles student inquiries, and ensures security through
+          role-based access. 🚀
+        </p>
+      </div>
+      <div className="mt-4 bg-black w-full min-h-screen  text-slate-300 relative py-4 font-[sans-serif]">
         <div className="grid grid-cols-12 m-8 mx-auto gap-2 sm:gap-4 md:gap-6 lg:gap-10 xl:gap-14 max-w-7xl my-4 px-2 font-[sans-serif]">
           <div id="content" className="bg-white/10 col-span-12 rounded-xl p-6">
             <div id="24h">

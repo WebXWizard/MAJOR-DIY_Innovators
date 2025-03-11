@@ -1,7 +1,8 @@
 "use client";
 // import localFont from "next/font/local";
-import Navbar from "./navbar";
+
 import { Toaster, ToastBar } from "react-hot-toast";
+import Navbar from "./navbar";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`$antialiased`}>
-        <Navbar />
+        <Navbar/>
 
         <Toaster>
           {(t) => (
