@@ -4,16 +4,18 @@ const Sidebar = () => {
   return (
     <div>
       <>
-        <div className=" w-full min-h-screen text-slate-300 relative py-4 font-[sans-serif]">
-          <div className="grid grid-cols-10  mx-auto gap-2 sm:gap-4 md:gap-6 lg:gap-10 xl:gap-14 max-w-7xl my-4 px-2 font-[sans-serif]">
+        <div className="w-full text-slate-300 relative py-2 font-[sans-serif]">
+          <div className="flex mx-auto my-4 px-2 font-[sans-serif]">
             <div id="menu" className=" bg-gray-900 col-span-3 rounded-xl p-4 ">
               <h1 className="font-bold text-lg lg:text-3xl bg-gradient-to-br from-white via-white/50 to-transparent bg-clip-text text-transparent">
                 Dashboard<span className="text-indigo-400">.</span>
               </h1>
-              <p className="text-slate-400 text-lg mb-2 ">Welcome back,</p>
-              <a
+              <p className="md:block hidden text-slate-400 text-lg mb-2 ">
+                Welcome back
+              </p>
+              {/* <a
                 href="#"
-                className="flex flex-col space-y-1 md:space-y-0 md:flex-row mb-5 items-center md:space-x-4 hover:bg-white/10 group transition duration-150 ease-linear rounded-lg group w-full py-3 px-2"
+                className=" flex flex-col space-y-1 md:space-y-0 md:flex-row mb-5 items-center md:space-x-4 hover:bg-white/10 group transition duration-150 ease-linear rounded-lg group w-full py-3 px-2"
               >
                 <div>
                   <img
@@ -23,12 +25,14 @@ const Sidebar = () => {
                   />
                 </div>
                 <div>
-                  <p className="font-medium text-xl group-hover:text-indigo-400 leading-4 mb-1">
+                  <p className="md:block hidden font-medium text-xl group-hover:text-indigo-400 leading-4 mb-1">
                     Shahe Alam
                   </p>
-                  <span className="text-sm text-slate-400">DIY INNOVATOR</span>
+                  <span className="md:block hidden text-sm text-slate-400">
+                    DIY INNOVATOR
+                  </span>
                 </div>
-              </a>
+              </a> */}
               <hr className="my-2 border-slate-700" />
               <div id="menu" className="flex flex-col space-y-1 my-5">
                 <a
@@ -174,29 +178,10 @@ const Sidebar = () => {
                       >
                         <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3" />
                       </svg>
-                      {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg> */}
                     </div>
                     <div>
                       <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        File Uploads
+                        Uploading
                       </p>
                       <p className="text-slate-400 text-md hidden md:block">
                         Cloudinary
@@ -249,7 +234,6 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        
       </>
     </div>
   );
