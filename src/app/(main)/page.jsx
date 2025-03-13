@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="">
-    
       {/* Hero */}
       <div className="relative font-[sans-serif] rounded-lg overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
@@ -300,12 +300,9 @@ export default function Home() {
             {/* End Grid */}
           </div>
         </div>
-
-       
       </main>
 
       {/*Footer container*/}
-
     </div>
   );
 }

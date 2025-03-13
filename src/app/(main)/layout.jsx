@@ -1,19 +1,19 @@
 "use client";
-// import localFont from "next/font/local";
+import localFont from "next/font/local";
 
 import { Toaster, ToastBar } from "react-hot-toast";
 import Navbar from "./navbar";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -23,7 +23,7 @@ import Navbar from "./navbar";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`$antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar/>
 
         <Toaster>

@@ -39,7 +39,7 @@ const ManageUser = () => {
 
   return (
     <div className="bg-gray-200 rounded-xl font-[sans-serif] ">
-      <div className="lg:max-w-[95%]  mx-auto py-2 ">
+      <div className="lg:max-w-[100%]  mx-auto py-2 ">
         <div className="border rounded-xl shadow-lg p-4 bg-cyan-200  ">
           <h1 className="text-center font-bold text-4xl font-[sans-serif]">
             Manage User
@@ -57,7 +57,7 @@ const ManageUser = () => {
               </tr>
             </thead>
 
-            <tbody className="bg-fuchsia-200 font-[sans-serif] text-sm">
+            <tbody className="bg-fuchsia-200 font-[sans-serif] text-md lg:text-sm">
               {userList.map((user) => {
                 return (
                   <tr key={user._id}>

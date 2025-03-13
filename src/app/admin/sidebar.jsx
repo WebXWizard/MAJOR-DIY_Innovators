@@ -4,236 +4,275 @@ const Sidebar = () => {
   return (
     <div>
       <>
-        <div className="w-full text-slate-300 relative py-2 font-[sans-serif]">
-          <div className="flex mx-auto my-4 px-2 font-[sans-serif]">
-            <div id="menu" className=" bg-gray-900 col-span-3 rounded-xl p-4 ">
-              <h1 className="font-bold text-lg lg:text-3xl bg-gradient-to-br from-white via-white/50 to-transparent bg-clip-text text-transparent">
-                Dashboard<span className="text-indigo-400">.</span>
-              </h1>
-              <p className="md:block hidden text-slate-400 text-lg mb-2 ">
-                Welcome back
-              </p>
-              {/* <a
-                href="#"
-                className=" flex flex-col space-y-1 md:space-y-0 md:flex-row mb-5 items-center md:space-x-4 hover:bg-white/10 group transition duration-150 ease-linear rounded-lg group w-full py-3 px-2"
-              >
-                <div>
-                  <img
-                    className="rounded-full w-10 h-10 relative object-cover"
-                    src="https://img.freepik.com/free-photo/no-problem-concept-bearded-man-makes-okay-gesture-has-everything-control-all-fine-gesture-wears-spectacles-jumper-poses-against-pink-wall-says-i-got-this-guarantees-something_273609-42817.jpg?w=1800&t=st=1669749937~exp=1669750537~hmac=4c5ab249387d44d91df18065e1e33956daab805bee4638c7fdbf83c73d62f125"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <p className="md:block hidden font-medium text-xl group-hover:text-indigo-400 leading-4 mb-1">
-                    Shahe Alam
-                  </p>
-                  <span className="md:block hidden text-sm text-slate-400">
-                    DIY INNOVATOR
-                  </span>
-                </div>
-              </a> */}
-              <hr className="my-2 border-slate-700" />
-              <div id="menu" className="flex flex-col space-y-1 my-5">
-                <a
-                  href="/admin/adminDashboard"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
+        <>
+          <button
+            data-drawer-target="separator-sidebar"
+            data-drawer-toggle="separator-sidebar"
+            aria-controls="separator-sidebar"
+            type="button"
+            className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          >
+            <span className="sr-only">Open sidebar</span>
+            <svg
+              className="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                fillRule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+              />
+            </svg>
+          </button>
+          <aside
+            id="separator-sidebar"
+            className="fixed top-2 left-2 z-40 w-60 h-screen transition-transform -translate-x-full sm:translate-x-0"
+            aria-label="Sidebar"
+          >
+            <div className="h-full rounded-xl px-3 py-4 overflow-y-auto bg-gray-900 dark:bg-gray-800 font-[sans-serif]">
+              <a href="" className="flex items-center ps-2.5 mb-5">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5553/5553926.png"
+                  className="h-6 me-3 sm:h-7"
+                  alt="Flowbite Logo"
+                />
+                <span className="self-center text-sm font-semibold whitespace-nowrap text-white">
+                  DIY INNOVATORS
+                </span>
+              </a>
+
+              <ul className="space-y-2 text-md lg:text-lg">
+                <li>
+                  <a
+                    href="/admin/adminDashboard"
+                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700 group"
+                  >
+                    <svg
+                      className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 22 21"
+                    >
+                      <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                      <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                    </svg>
+                    <span className="ms-3">Dashboard</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/admin/manage_User"
+                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700 group"
+                  >
+                    <svg
+                      className="shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 18"
+                    >
+                      <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                    </svg>
+                    <span className="flex-1 ms-3 whitespace-nowrap">Users</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/admin/manageTutorials"
+                    className="flex items-center p-2 text-white transition duration-75 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 dark:text-white group"
+                  >
+                    <svg
+                      className="shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 16 20"
+                    >
+                      <path d="M16 14V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 0 0 0-2h-1v-2a2 2 0 0 0 2-2ZM4 2h2v12H4V2Zm8 16H3a1 1 0 0 1 0-2h9v2Z" />
+                    </svg>
+                    <span className="ms-3">Library / Tutorials</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/admin/manageProduct"
+                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700 group"
+                  >
+                    <svg
+                      className="shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 18 20"
+                    >
+                      <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
+                    </svg>
+                    <span className="flex-1 ms-3 whitespace-nowrap">
+                      Products / Kits
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/user/login"
+                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700 group"
+                  >
+                    <svg
+                      className="shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 18 16"
+                    >
+                      <path
                         stroke="currentColor"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Dashboard
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Data Overview
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="/admin/manageProduct"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="relative flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Products
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Manage Products
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="/admin/manageTutorials"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="relative flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#fffafa"
-                        strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                      >
-                        <path d="M15.6 11.6L22 7v10l-6.4-4.5v-1zM4 5h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Tutorials
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Manage Tutorials
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="/admin/manage_User"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
+                        strokeWidth={2}
+                        d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
+                      />
+                    </svg>
+                    <span className="flex-1 ms-3 whitespace-nowrap">
+                      Sign In
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/user/signUp"
+                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700 group"
+                  >
+                    <svg
+                      className="shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
+                      <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />
+                      <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
+                    </svg>
+                    <span className="flex-1 ms-3 whitespace-nowrap">
+                      Sign Up
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <ul className="pt-4 mt-4 space-y-2 text-md lg:text-lg border-t border-gray-500 dark:border-gray-700">
+                <li>
+                  <a
+                    href="/admin/addproduct"
+                    className="flex items-center p-2 text-white transition duration-75 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 dark:text-white group"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
                         stroke="currentColor"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Users
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Manage Users
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="/admin/fileUploading"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#fffafa"
-                        strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 4.2v10.3" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Uploading
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Cloudinary
-                      </p>
-                    </div>
-                  </div>
-                </a>
+                        strokeWidth={2}
+                        d="M9 5v14m8-7h-2m0 0h-2m2 0v2m0-2v-2M3 11h6m-6 4h6m11 4H4c-.55228 0-1-.4477-1-1V6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1v12c0 .5523-.4477 1-1 1Z"
+                      />
+                    </svg>
 
-                <a
-                  href="#"
-                  className="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group"
-                >
-                  <div className="flex flex-col space-y-1 md:flex-row md:space-y-0 space-x-4 items-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
+                    <span className="ms-3">Add Kits</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/admin/addTutorials"
+                    className="flex items-center p-2 text-white transition duration-75 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 dark:text-white group"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
                         stroke="currentColor"
-                        className="w-6 h-6 group-hover:text-indigo-400"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-base lg:text-xl text-slate-200 leading-4 group-hover:text-indigo-400">
-                        Settings
-                      </p>
-                      <p className="text-slate-400 text-md hidden md:block">
-                        Edit settings
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5v14m8-7h-2m0 0h-2m2 0v2m0-2v-2M3 11h6m-6 4h6m11 4H4c-.55228 0-1-.4477-1-1V6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1v12c0 .5523-.4477 1-1 1Z"
+                      />
+                    </svg>
 
-              <p className="text-md text-center text-gray-600">
-                v2.0.0.3 | © 2022 Pantazi Soft
-              </p>
+                    <span className="ms-3">Add Tutorials</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/admin/fileUploading"
+                    className="flex items-center p-2 text-white transition duration-75 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 dark:text-white group"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 5v9m-5 0H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2M8 9l4-5 4 5m1 8h.01"
+                      />
+                    </svg>
+
+                    <span className="ms-3">File Uploading</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    className="flex items-center p-2 text-white transition duration-75 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-700 dark:text-white group"
+                  >
+                    <svg
+                      className="w-6 h-6 text-white dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 6h12M6 18h12m-5-8h5m-5 4h5M9.5 9v6L6 12l3.5-3Z"
+                      />
+                    </svg>
+
+                    <span className="ms-3">Log Out</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
-        </div>
+          </aside>
+        </>
       </>
     </div>
   );

@@ -28,12 +28,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div></div>
-        <div className="flex h-screen">
+        <div className="flex ">
           {/* Sidebar (Fixed Width) */}
           <Sidebar />
 
           {/* Main Content (Takes Remaining Space) */}
-          <div className="flex-1 p-6">{children}</div>
+          <div className="flex-1 md:ml-20 lg:ml-60 p-8">{children}</div>
         </div>
 
         <Toaster>
