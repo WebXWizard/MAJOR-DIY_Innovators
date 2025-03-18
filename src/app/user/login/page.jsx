@@ -123,7 +123,7 @@ const Login = () => {
                       <p className="mt-2 text-md text-gray-600 text-end">
                         {/* I agree all your<span> </span> */}
                         <a
-                          href="#"
+                          href="/user/forget-password"
                           className=" text-indigo-500 border-dotted font-semibold"
                         >
                           Forget Password
