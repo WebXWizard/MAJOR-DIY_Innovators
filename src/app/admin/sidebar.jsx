@@ -1,17 +1,24 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div>
+    <div className="font-[sans-serif]">
       <button
+        onClick={toggleSidebar}
         data-drawer-target="separator-sidebar"
         data-drawer-toggle="separator-sidebar"
         aria-controls="separator-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="fixed top-4 left-4 inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-50"
       >
-        <span className="sr-only">Open sidebar</span>
+        <span className="sr-only">Toggle sidebar</span>
         <svg
           className="w-6 h-6"
           aria-hidden="true"
@@ -26,17 +33,40 @@ const Sidebar = () => {
           />
         </svg>
       </button>
+
       <aside
         id="separator-sidebar"
-        className="fixed top-2 left-2 z-40 w-60 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="h-full rounded-xl px-3 py-4 overflow-y-auto bg-gray-900 dark:bg-gray-800 font-[sans-serif]">
-          <a href="" className="flex items-center ps-2.5 mb-5">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-900 dark:bg-gray-800">
+          {/* Close button for mobile */}
+          <button
+            onClick={toggleSidebar}
+            className="absolute top-4 right-4 text-white md:hidden"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <a href="" className="flex items-center ps-2.5 mb-5 mt-4">
             <img
               src="https://cdn-icons-png.flaticon.com/512/5553/5553926.png"
               className="h-6 me-3 sm:h-7"
-              alt="Flowbite Logo"
+              alt="DIY Innovators Logo"
             />
             <span className="self-center text-sm font-semibold whitespace-nowrap text-white">
               DIY INNOVATORS
@@ -267,6 +297,14 @@ const Sidebar = () => {
           </ul>
         </div>
       </aside>
+
+      {/* Overlay for mobile */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={toggleSidebar}
+        />
+      )}
     </div>
   );
 };
