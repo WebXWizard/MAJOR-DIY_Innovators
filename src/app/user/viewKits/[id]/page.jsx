@@ -1,11 +1,84 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Script from "next/script";
+import axios from "axios";
 
 const ViewKits = () => {
   const { id } = useParams();
   const [productList, setProductList] = useState([]);
+  const [amount, setAmount] = useState(0);
+
+  const handleBuyNow = useCallback(async (planAmount) => {
+    try {
+      // Check if Razorpay is loaded
+      if (!window.Razorpay) {
+        throw new Error("Razorpay SDK failed to load");
+      }
+
+      const { data } = await axios.post("http://localhost:5000/order/create", {
+        amount: planAmount * 100,
+      });
+
+      if (!data || !data.orderId) {
+        throw new Error("Invalid response data");
+      }
+
+      const paymentData = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        order_id: data.orderId,
+        amount: planAmount * 100,
+        currency: "INR",
+        name: "DIY Innovators",
+        description: "Purchase DIY Kit",
+        prefill: {
+          name: "",
+          email: "",
+          contact: ""
+        },
+        theme: {
+          color: "#7C3AED"
+        },
+        handler: async function (response) {
+          try {
+            const { data: verifyData } = await axios.post(
+              "http://localhost:5000/order/verify",
+              {
+                orderId: response.razorpay_order_id,
+                razorpayPaymentId: response.razorpay_payment_id,
+                razorpaySignature: response.razorpay_signature,
+              }
+            );
+
+            if (verifyData.isOk) {
+              alert("Payment successful");
+            } else {
+              alert("Payment verification failed");
+            }
+          } catch (error) {
+            console.error(
+              "Verification error:",
+              error.response?.data || error.message
+            );
+            alert("Payment verification failed");
+          }
+        },
+      };
+
+      const payment = new window.Razorpay(paymentData);
+      payment.on('payment.failed', function(response){
+        alert("Payment failed. Please try again. \nError: " + response.error.description);
+      });
+      payment.open();
+    } catch (error) {
+      console.error(
+        "Order creation error:",
+        error.response?.data || error.message
+      );
+      alert("Failed to create order: " + (error.response?.data?.error || error.message));
+    }
+  }, []);
 
   const getProductData = async () => {
     const res = await fetch("http://localhost:5000/product/getbyid/" + id);
@@ -22,6 +95,11 @@ const ViewKits = () => {
 
   return (
     <div className="">
+      <Script
+        type="text/javascript"
+        src="https://checkout.razorpay.com/v1/checkout.js"
+      />
+
       <div className="">
         {productList !== null ? (
           <div className=" ">
@@ -120,56 +198,20 @@ const ViewKits = () => {
                       </div>
                     </div>
                     <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8 font-[sans-serif]">
-                      {/* <a
-                        href="#"
-                        title=""
-                        className="flex items-center justify-center py-2.5 px-5 text-md font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-600 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                        role="button"
-                      >
-                        <svg
-                          className="w-5 h-5 -ms-2 me-2"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={24}
-                          height={24}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                          />
-                        </svg>
-                        Add to Wishlist
-                      </a> */}
-                      {/* <a
-                        href="#"
-                        title=""
-                        className=" mt-4 sm:mt-0 bg-violet-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 dark:bg-indigo-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center justify-center text-white"
-                        role="button"
-                      >
-                        <svg
-                          className="w-5 h-5 -ms-2 me-2"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={24}
-                          height={24}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                          />
-                        </svg>
-                        Add to cart
-                      </a> */}
+                       <div className=" space-x-4">
+                  <button
+                    onClick={() => handleBuyNow(productList.price)}
+                    className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-colors duration-200 font-[sans-serif]"
+                  >
+                    Buy Now
+                  </button>
+                  <button
+                    className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-violet-700 bg-violet-100 hover:bg-violet-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-colors duration-200"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+
                     </div>
                     <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
                     <h3 className="text-xl font-semibold mb-2">

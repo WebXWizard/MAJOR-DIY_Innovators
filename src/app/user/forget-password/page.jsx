@@ -126,7 +126,7 @@ const ResetPassword = () => {
               <div className="mb-4">
                 <input
                   type="text"
-                  className="w-full font-[family-name:var(--font-geist-mono)] px-3 py-2 border text-gray-100 border-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="text-green-600 w-full font-[family-name:var(--font-geist-mono)] px-3 py-2 border border-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter Your Email"
                   id="email"
                   value={email}

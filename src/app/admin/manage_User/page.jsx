@@ -39,30 +39,32 @@ const ManageUser = () => {
 
   return (
     <div className="bg-gray-200 rounded-xl font-[sans-serif] ">
-      <div className="lg:max-w-[100%]  mx-auto py-2 ">
+      <div className="lg:max-w-[100%] mx-auto py-2 ">
         <div className="border rounded-xl shadow-lg p-4 bg-cyan-200  ">
           <h1 className="text-center font-bold text-4xl font-[sans-serif]">
             Manage User
           </h1>
           {/* <hr/> */}
 
-          <table className="w-full mt-4 mb-2 font-sans rounded-lg">
+          <table className="w-full mt-4 mb-2 font-[sans-serif] rounded-lg">
             <thead className="bg-rose-300 rounded-xl text-white font-[sans-serif]">
               <tr>
                 <th className="p-2 border border-white">ID</th>
                 <th className="p-2 border border-white">NAME</th>
+                {/* <th className="p-2 border border-white">Phone</th> */}
                 <th className="p-2 border border-white">EMAIL</th>
                 <th className="p-2 border border-white">PASSWORD</th>
                 <th colSpan={2}>ACTIONS</th>
               </tr>
             </thead>
 
-            <tbody className="bg-fuchsia-200 font-[sans-serif] text-md lg:text-sm">
+            <tbody className="bg-fuchsia-200 font-[sans-serif] text-sm lg:text-xs">
               {userList.map((user) => {
                 return (
                   <tr key={user._id}>
                     <td className="p-2 border via-violet-300">{user._id} </td>
                     <td className="p-2 border via-violet-300">{user.name} </td>
+                    {/* <td className="p-2 border via-violet-300">{user.phone} </td> */}
                     <td className="p-2 border via-violet-300">{user.email} </td>
                     <td className="p-2 border via-violet-300">
                       {user.password}
