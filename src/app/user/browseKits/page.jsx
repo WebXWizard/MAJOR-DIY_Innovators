@@ -366,13 +366,7 @@ const Kits = () => {
         aria-labelledby="component-tab-1-item"
         style={{}}
       >
-        <div className="code-toolbar relative border border-gray-300 rounded-xl">
-          <img
-            src="https://pagedone.io/block_preview_image/Footer-6.png"
-            alt="image"
-            className="rounded-xl"
-          />
-        </div>
+       
       </div>
     </div>
   );

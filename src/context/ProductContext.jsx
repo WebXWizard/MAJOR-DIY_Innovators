@@ -3,12 +3,17 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const cartItemsinSession = JSON.parse(localStorage.getItem("cartItems"));
+  const [cartItems, setCartItems] = useState([]);
 
-  const [cartItems, setCartItems] = useState(
-    cartItemsinSession ? cartItemsinSession : []
-  );
+  // Load cartItems from localStorage *only on the client*
+  useEffect(() => {
+    const cartItemsinSession = JSON.parse(localStorage.getItem("cartItems"));
+    if (cartItemsinSession) {
+      setCartItems(cartItemsinSession);
+    }
+  }, []);
 
+  // Save cartItems to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -26,14 +31,12 @@ export const ProductProvider = ({ children }) => {
       return;
     }
     setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    // localStorage.setItem('cartItems', JSON.stringify(cartItems));
   };
 
   const removeItemFromCart = (item) => {
     const exist = cartItems.find((cartItem) => cartItem._id === item._id);
     if (exist.quantity === 1) {
       setCartItems(cartItems.filter((cartItem) => cartItem._id !== item._id));
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
     } else {
       setCartItems(
         cartItems.map((cartItem) =>
@@ -42,13 +45,11 @@ export const ProductProvider = ({ children }) => {
             : cartItem
         )
       );
-      // localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }
   };
 
   const clearCart = () => {
     setCartItems([]);
-    // localStorage.setItem('cartItems', JSON.stringify(cartItems));
   };
 
   const isInCart = (item) => {
