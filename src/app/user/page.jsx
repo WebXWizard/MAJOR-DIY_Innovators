@@ -51,7 +51,7 @@ export default function Home() {
           <div className="mt-5 flex items-center justify-center gap-x-6">
             <a
               className="isomorphic-link isomorphic-link--internal inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-4 py-3 text-lg font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 font-[sans-serif]"
-              href="/signUp"
+              href="/user/signUp"
             >
               Get Started
               <svg
